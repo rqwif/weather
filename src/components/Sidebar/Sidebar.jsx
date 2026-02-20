@@ -4,15 +4,15 @@ import "./Sidebar.css";
 const Sidebar = () => {
   return (
     <div className="sidebar glass">
-      <h3>Saved Cities</h3>
+      <p className="sidebar__name">збережені міста</p>
 
       <div className="sidebar__item">
-        <p>Kyiv</p>
+        <p>Київ</p>
         <button>×</button>
       </div>
 
       <div className="sidebar__item">
-        <p>Lviv</p>
+        <p>Львів</p>
         <button>×</button>
       </div>
     </div>

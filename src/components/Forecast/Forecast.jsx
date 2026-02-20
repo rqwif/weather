@@ -5,7 +5,7 @@ import icon from "../../assets/icons/icon1.png";
 const Forecast = () => {
   return (
     <div className="forecast glass">
-      <h3 className="forecast__name">5-Day Forecast</h3>
+      <p className="forecast__name">5-денний прогноз</p>
 
       <div className="forecast__item glass">
         <div className="forecast__left">

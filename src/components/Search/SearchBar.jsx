@@ -7,7 +7,7 @@ const Search = () => {
       <input
         className="search__input"
         type="text"
-        placeholder="Enter city..."
+        placeholder="Пошук міста"
       />
       <button className="search__btn">°C</button>
     </div>
