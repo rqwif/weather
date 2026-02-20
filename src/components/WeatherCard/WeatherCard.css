@@ -1,0 +1,29 @@
+.weather-card {
+  height: 500px;
+  width: 600px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.weather-card__city {
+  font-size: 20px;
+}
+
+.weather-card__temp {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.weather-card__range {
+  display: flex;
+  gap: 20px;
+}
+
+.weather-card__icon img {
+  width: 100px;
+}

@@ -1,0 +1,22 @@
+.sidebar {
+  width: 250px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+}
+
+.sidebar__item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.sidebar__item button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
