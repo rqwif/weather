@@ -102,7 +102,7 @@
   position: absolute;
   
   left: 3px;
-  top: 12px;
+  top: 14px;
 }
 
 .stat__label {
@@ -112,8 +112,16 @@
 }
 
 .stat__value {
-  font-size: 28px;
+  font-size: 23px;
   font-weight: 600;
   margin-top: 10px;
 }
 
+.weather-ced__button{
+  color: white;
+  height: 60px;
+  width: 135px;
+  margin-top: 100px;
+  padding: 10px;
+  border-radius: 15px;
+}
