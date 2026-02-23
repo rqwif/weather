@@ -1,6 +1,7 @@
 import React from "react";
 import "./Sidebar.css";
 
+
 const Sidebar = ({ cities, onSelect, onRemove }) => {
   return (
     <div className="sidebar glass">
