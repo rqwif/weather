@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 
-const Search = ({ setCity, unit, setUnit }) => {
+const Search = ({ setCity, unit, setUnit, onGeo }) => {
   const [input, setInput] = useState("");
 
   const handleSearch = () => {
@@ -26,6 +26,10 @@ const Search = ({ setCity, unit, setUnit }) => {
         onClick={() => setUnit(unit === "metric" ? "imperial" : "metric")}
       >
         {unit === "metric" ? "°C" : "°F"}
+      </button>
+
+      <button className="search__btn" onClick={onGeo}>
+        📍
       </button>
     </div>
   );

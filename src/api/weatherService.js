@@ -24,3 +24,13 @@ export const getForecast = async (city) => {
 
   return await response.json();
 };
+
+export const getWeatherByCoords = async (lat, lon, unit = "metric") => {
+  const res = await fetch(
+    `${BASE_URL}/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${API_KEY}&lang=ua`
+  );
+
+  if (!res.ok) throw new Error("Помилка геолокації");
+
+  return await res.json();
+};

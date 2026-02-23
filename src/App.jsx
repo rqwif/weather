@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { getCurrentWeather, getForecast } from "./api/weatherService";
+import {
+  getCurrentWeather,
+  getForecast,
+  getWeatherByCoords,
+} from "./api/weatherService";
 import "./App.css";
 import skyBg from "./assets/backgrounds/sky.jpg";
+import { getWeatherBackground } from "./utils/weatherBackground";
 
 import Search from "./components/Search/SearchBar";
 import WeatherCard from "./components/WeatherCard/WeatherCard";
@@ -60,11 +65,47 @@ function App() {
     setSavedCities(savedCities.filter((c) => c !== name));
   };
 
+  const handleGeoLocation = () => {
+    if (!navigator.geolocation) {
+      alert("Геолокація не підтримується");
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        try {
+          const data = await getWeatherByCoords(
+            position.coords.latitude,
+            position.coords.longitude,
+            unit,
+          );
+
+          setCity(data.name);
+        } catch (err) {
+          alert("Помилка визначення місця");
+        }
+      },
+      () => alert("Доступ до геолокації заборонено"),
+    );
+  };
+
   return (
-    <div className="app" style={{ backgroundImage: `url(${skyBg})` }}>
+    <div
+      className="app"
+      style={{
+        backgroundImage: `url(${
+          weather ? getWeatherBackground(weather.weather[0].main) : skyBg
+        })`,
+      }}
+    >
       <div className="app__overlay">
         <div className="app__search">
-          <Search setCity={setCity} unit={unit} setUnit={setUnit} />
+          <Search
+            setCity={setCity}
+            unit={unit}
+            setUnit={setUnit}
+            onGeo={handleGeoLocation}
+          />
         </div>
 
         <div className="app__content">
